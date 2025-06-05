@@ -1,0 +1,8 @@
+valid_username: standard_user
+valid_password: secret_sauce
+invalid_username: test_user
+invalid_password: wrong_pass
+empty: ''
+firstName: Jim
+lastName: Son
+postalCode: 10100

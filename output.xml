@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on darwin)" generated="2025-05-30T19:12:07.350382" rpa="false" schemaversion="5">
+<suite id="s1" name="CheckoutInfoTestcases" source="/Users/pangpntt/Desktop/QA/SwagLab/testcases/CheckoutInfoTestcases.robot">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-05-30T19:12:07.460617" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${baseUrl}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-30T19:12:07.460495" elapsed="1.542531"/>
+</kw>
+<test id="s1-t1" name="User cannot go to overview information page" line="13">
+<kw name="user login with username ${valid_username} and password ${valid_password}" owner="LoginKeywords" source_name="user login with username ${username} and password ${password}">
+<kw name="Wait until element is ready then input text" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.005383" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.004789" elapsed="0.162689"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Input Text</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.004586" elapsed="0.162996"/>
+</kw>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+<status status="PASS" start="2025-05-30T19:12:09.004373" elapsed="0.163281"/>
+</kw>
+<kw name="Wait until element is ready then input text" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.168763" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.168625" elapsed="0.041915"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Input Text</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.168250" elapsed="0.042349"/>
+</kw>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-30T19:12:09.167847" elapsed="0.042794"/>
+</kw>
+<kw name="Wait until element is ready then click element" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.211089" level="INFO">Clicking element 'xpath=//input[@type="submit"]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.210996" elapsed="0.062570"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.210888" elapsed="0.062809"/>
+</kw>
+<arg>xpath=//input[@type="submit"]</arg>
+<status status="PASS" start="2025-05-30T19:12:09.210738" elapsed="0.063009"/>
+</kw>
+<status status="PASS" start="2025-05-30T19:12:09.004124" elapsed="0.269652"/>
+</kw>
+<kw name="Wait until page contains element" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.279539" level="INFO">Current page contains element 'css=button.btn_inventory'.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.274335" elapsed="0.005246"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.274190" elapsed="0.005429"/>
+</kw>
+<arg>css=button.btn_inventory</arg>
+<status status="PASS" start="2025-05-30T19:12:09.273960" elapsed="0.005692"/>
+</kw>
+<kw name="Add Product To Cart" owner="CartPageKeywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.292835" level="INFO">${selected_product_name} = Sauce Labs Backpack</msg>
+<var>${selected_product_name}</var>
+<arg>xpath=(//div[@data-test="inventory-item-name"])[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.280023" elapsed="0.012835"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-30T19:12:09.293074" level="INFO">${selected_product_name} = Sauce Labs Backpack</msg>
+<arg>${selected_product_name}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.292965" elapsed="0.000128"/>
+</kw>
+<kw name="Wait until element is ready then click element" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.293456" level="INFO">Clicking element 'xpath=(//button[contains(text(), 'Add to cart')])[1]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.293377" elapsed="0.024884"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.293291" elapsed="0.025012"/>
+</kw>
+<arg>xpath=(//button[contains(text(), 'Add to cart')])[1]</arg>
+<status status="PASS" start="2025-05-30T19:12:09.293174" elapsed="0.025161"/>
+</kw>
+<status status="PASS" start="2025-05-30T19:12:09.279760" elapsed="0.038596"/>
+</kw>
+<kw name="Verify First Product Button Is Remove" owner="ProductPageKeywords">
+<kw name="Wait until page contains element" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.323112" level="INFO">Current page contains element 'xpath=(//button[contains(@class, 'btn_inventory')])[1]'.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.318802" elapsed="0.004345"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.318723" elapsed="0.004504"/>
+</kw>
+<arg>xpath=(//button[contains(@class, 'btn_inventory')])[1]</arg>
+<status status="PASS" start="2025-05-30T19:12:09.318623" elapsed="0.004667"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.323456" level="INFO">Verifying element 'xpath=(//button[contains(@class, 'btn_inventory')])[1]' contains exact text 'Remove'.</msg>
+<arg>xpath=(//button[contains(@class, 'btn_inventory')])[1]</arg>
+<arg>Remove</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.323367" elapsed="0.006158"/>
+</kw>
+<status status="PASS" start="2025-05-30T19:12:09.318475" elapsed="0.011098"/>
+</kw>
+<kw name="Get Cart Badge Count" owner="ProductPageKeywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.337279" level="INFO">${cart_text} = 1</msg>
+<var>${cart_text}</var>
+<arg>css=.shopping_cart_badge</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.329823" elapsed="0.007472"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<msg time="2025-05-30T19:12:09.337471" level="INFO">${cart_number} = 1</msg>
+<var>${cart_number}</var>
+<arg>${cart_text}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.337362" elapsed="0.000185"/>
+</kw>
+<return>
+<value>${cart_number}</value>
+<status status="PASS" start="2025-05-30T19:12:09.337608" elapsed="0.000054"/>
+</return>
+<msg time="2025-05-30T19:12:09.337728" level="INFO">${cart_count} = 1</msg>
+<var>${cart_count}</var>
+<status status="PASS" start="2025-05-30T19:12:09.329717" elapsed="0.008021"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-05-30T19:12:09.337886" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${cart_count}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.337809" elapsed="0.000106"/>
+</kw>
+<kw name="Click Cart Icon" owner="ProductPageKeywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=.shopping_cart_link</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.338104" elapsed="0.010251"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.348512" level="INFO">Clicking element 'css=.shopping_cart_link'.</msg>
+<arg>css=.shopping_cart_link</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.348432" elapsed="0.024335"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-05-30T19:12:09.372939" level="INFO">Clicked cart icon</msg>
+<arg>Clicked cart icon</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.372867" elapsed="0.000093"/>
+</kw>
+<status status="PASS" start="2025-05-30T19:12:09.338005" elapsed="0.034985"/>
+</kw>
+<kw name="Go To Cart Page" owner="ProductPageKeywords">
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://www.saucedemo.com/cart.html</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.373297" elapsed="0.003192"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.377959" level="INFO">Current location is 'https://www.saucedemo.com/cart.html'.</msg>
+<arg>https://www.saucedemo.com/cart.html</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.376577" elapsed="0.001414"/>
+</kw>
+<status status="PASS" start="2025-05-30T19:12:09.373103" elapsed="0.004924"/>
+</kw>
+<kw name="Verify Product Name In Cart Matches Selected" owner="CartPageKeywords">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.385782" level="INFO">${cart_product_name} = Sauce Labs Backpack</msg>
+<var>${cart_product_name}</var>
+<arg>css=.inventory_item_name</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.378362" elapsed="0.007440"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${cart_product_name}</arg>
+<arg>${selected_product_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.385875" elapsed="0.000095"/>
+</kw>
+<status status="PASS" start="2025-05-30T19:12:09.378125" elapsed="0.007874"/>
+</kw>
+<kw name="Click checkout button" owner="CartPageKeywords">
+<kw name="Wait until element is ready then click element" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.386463" level="INFO">Clicking element 'xpath=(//button[@id="checkout"])'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.386394" elapsed="0.027560"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.386308" elapsed="0.027758"/>
+</kw>
+<arg>xpath=(//button[@id="checkout"])</arg>
+<status status="PASS" start="2025-05-30T19:12:09.386208" elapsed="0.027901"/>
+</kw>
+<status status="PASS" start="2025-05-30T19:12:09.386100" elapsed="0.028033"/>
+</kw>
+<kw name="Go To Information Page" owner="CartPageKeywords">
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://www.saucedemo.com/checkout-step-one.html</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.414402" elapsed="0.002146"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.418132" level="INFO">Current location is 'https://www.saucedemo.com/checkout-step-one.html'.</msg>
+<arg>https://www.saucedemo.com/checkout-step-one.html</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.416612" elapsed="0.001545"/>
+</kw>
+<status status="PASS" start="2025-05-30T19:12:09.414263" elapsed="0.003922"/>
+</kw>
+<kw name="click continue button" owner="CheckoutInfoKeywords">
+<kw name="Wait until element is ready then click element" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.418632" level="INFO">Clicking element 'xpath=//input[@type="submit" and @id="continue"]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.418557" elapsed="0.059000"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:09.418476" elapsed="0.059153"/>
+</kw>
+<arg>xpath=//input[@type="submit" and @id="continue"]</arg>
+<status status="PASS" start="2025-05-30T19:12:09.418383" elapsed="0.059294"/>
+</kw>
+<status status="PASS" start="2025-05-30T19:12:09.418270" elapsed="0.059431"/>
+</kw>
+<kw name="user fail go to overview page" owner="CheckoutInfoKeywords">
+<kw name="Wait until page contains element" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:09.595186" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-339.png"&gt;&lt;img src="selenium-screenshot-339.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:09.595297" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:09.478212" elapsed="0.127065">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:11.731500" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-340.png"&gt;&lt;img src="selenium-screenshot-340.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:11.731586" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:11.606876" elapsed="0.125076">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:13.861154" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-341.png"&gt;&lt;img src="selenium-screenshot-341.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:13.861309" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:13.735181" elapsed="0.126682">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:15.993505" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-342.png"&gt;&lt;img src="selenium-screenshot-342.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:15.993589" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:15.863322" elapsed="0.130648">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:18.129460" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-343.png"&gt;&lt;img src="selenium-screenshot-343.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:18.129545" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:17.997071" elapsed="0.132838">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<msg time="2025-05-30T19:12:18.129989" level="FAIL">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="FAIL" start="2025-05-30T19:12:09.478121" elapsed="8.652124">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<arg>css=h3[data-test="error"]</arg>
+<status status="FAIL" start="2025-05-30T19:12:09.478014" elapsed="8.652361">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>css=h3[data-test="error"]</arg>
+<arg>${expected_text}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-05-30T19:12:18.130478" elapsed="0.000015"/>
+</kw>
+<arg>Error: First Name is required</arg>
+<status status="FAIL" start="2025-05-30T19:12:09.477849" elapsed="8.652682">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<status status="FAIL" start="2025-05-30T19:12:09.003431" elapsed="9.127276">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</test>
+<test id="s1-t2" name="๊User cannot go to overview information page without First Name" line="28">
+<kw name="user input field with firstname ${empty} lastname ${lastName} and zipcode ${postalCode}" owner="CheckoutInfoKeywords" source_name="user input field with firstname ${firstName} lastname ${lastName} and zipcode ${postalCode}">
+<kw name="Wait until element is ready then input text" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:18.131701" level="INFO">Typing text '' into text field 'id=first-name'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:18.131609" elapsed="0.043047"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Input Text</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:18.131497" elapsed="0.043217"/>
+</kw>
+<arg>id=first-name</arg>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-05-30T19:12:18.131372" elapsed="0.043384"/>
+</kw>
+<kw name="Wait until element is ready then input text" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:18.175207" level="INFO">Typing text 'Son' into text field 'id=last-name'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:18.175115" elapsed="0.029137"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Input Text</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:18.175025" elapsed="0.029287"/>
+</kw>
+<arg>id=last-name</arg>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-05-30T19:12:18.174856" elapsed="0.029491"/>
+</kw>
+<kw name="Wait until element is ready then input text" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:18.204788" level="INFO">Typing text '10100' into text field 'id=postal-code'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:18.204696" elapsed="0.027038"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Input Text</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:18.204605" elapsed="0.027176"/>
+</kw>
+<arg>id=postal-code</arg>
+<arg>${postalCode}</arg>
+<status status="PASS" start="2025-05-30T19:12:18.204441" elapsed="0.027373"/>
+</kw>
+<kw name="Wait until element is ready then click element" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:18.232197" level="INFO">Clicking element 'xpath=//input[@type="submit"]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:18.232114" elapsed="0.021288"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:18.232029" elapsed="0.021414"/>
+</kw>
+<arg>xpath=//input[@type="submit"]</arg>
+<status status="PASS" start="2025-05-30T19:12:18.231895" elapsed="0.021579"/>
+</kw>
+<status status="PASS" start="2025-05-30T19:12:18.131199" elapsed="0.122295"/>
+</kw>
+<kw name="user fail go to overview page" owner="CheckoutInfoKeywords">
+<kw name="Wait until page contains element" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:18.359134" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-344.png"&gt;&lt;img src="selenium-screenshot-344.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:18.359235" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:18.253910" elapsed="0.105751">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:20.481328" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-345.png"&gt;&lt;img src="selenium-screenshot-345.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:20.481404" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:20.360445" elapsed="0.121298">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:22.610730" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-346.png"&gt;&lt;img src="selenium-screenshot-346.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:22.610824" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:22.483652" elapsed="0.127531">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:24.748398" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-347.png"&gt;&lt;img src="selenium-screenshot-347.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:24.748493" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:24.612816" elapsed="0.136029">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:26.861800" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-348.png"&gt;&lt;img src="selenium-screenshot-348.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:26.861875" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:26.751208" elapsed="0.111007">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<msg time="2025-05-30T19:12:26.862277" level="FAIL">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="FAIL" start="2025-05-30T19:12:18.253831" elapsed="8.608694">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<arg>css=h3[data-test="error"]</arg>
+<status status="FAIL" start="2025-05-30T19:12:18.253735" elapsed="8.608854">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>css=h3[data-test="error"]</arg>
+<arg>${expected_text}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-05-30T19:12:26.862666" elapsed="0.000016"/>
+</kw>
+<arg>Error: First Name is required</arg>
+<status status="FAIL" start="2025-05-30T19:12:18.253599" elapsed="8.609119">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<status status="FAIL" start="2025-05-30T19:12:18.130863" elapsed="8.731956">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</test>
+<test id="s1-t3" name="๊User cannot go to overview information page without Last Name" line="32">
+<kw name="user input field with firstname ${firstName} lastname ${empty} and zipcode ${postalCode}" owner="CheckoutInfoKeywords" source_name="user input field with firstname ${firstName} lastname ${lastName} and zipcode ${postalCode}">
+<kw name="Wait until element is ready then input text" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:26.863573" level="INFO">Typing text 'Jim' into text field 'id=first-name'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:26.863486" elapsed="0.026712"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Input Text</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:26.863399" elapsed="0.026843"/>
+</kw>
+<arg>id=first-name</arg>
+<arg>${firstName}</arg>
+<status status="PASS" start="2025-05-30T19:12:26.863286" elapsed="0.026988"/>
+</kw>
+<kw name="Wait until element is ready then input text" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:26.890664" level="INFO">Typing text '' into text field 'id=last-name'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:26.890583" elapsed="0.027899"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Input Text</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:26.890501" elapsed="0.028033"/>
+</kw>
+<arg>id=last-name</arg>
+<arg>${lastName}</arg>
+<status status="PASS" start="2025-05-30T19:12:26.890360" elapsed="0.028209"/>
+</kw>
+<kw name="Wait until element is ready then input text" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:26.918986" level="INFO">Typing text '10100' into text field 'id=postal-code'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:26.918898" elapsed="0.025584"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Input Text</arg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:26.918811" elapsed="0.025732"/>
+</kw>
+<arg>id=postal-code</arg>
+<arg>${postalCode}</arg>
+<status status="PASS" start="2025-05-30T19:12:26.918657" elapsed="0.025923"/>
+</kw>
+<kw name="Wait until element is ready then click element" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:26.945011" level="INFO">Clicking element 'xpath=//input[@type="submit"]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-30T19:12:26.944918" elapsed="0.019790"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Click Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-05-30T19:12:26.944825" elapsed="0.019938"/>
+</kw>
+<arg>xpath=//input[@type="submit"]</arg>
+<status status="PASS" start="2025-05-30T19:12:26.944677" elapsed="0.020124"/>
+</kw>
+<status status="PASS" start="2025-05-30T19:12:26.863131" elapsed="0.101914"/>
+</kw>
+<kw name="user fail go to overview page" owner="CheckoutInfoKeywords">
+<kw name="Wait until page contains element" owner="CommonKeywords">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:27.045330" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-349.png"&gt;&lt;img src="selenium-screenshot-349.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:27.045414" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:26.965531" elapsed="0.080262">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:29.164808" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-350.png"&gt;&lt;img src="selenium-screenshot-350.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:29.164886" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:29.047808" elapsed="0.117435">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:31.311475" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-351.png"&gt;&lt;img src="selenium-screenshot-351.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:31.311585" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:31.169175" elapsed="0.142797">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:33.469087" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-352.png"&gt;&lt;img src="selenium-screenshot-352.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:33.469277" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:33.314543" elapsed="0.156663">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-05-30T19:12:35.610707" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-353.png"&gt;&lt;img src="selenium-screenshot-353.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-05-30T19:12:35.610806" level="FAIL">Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>${locator}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-05-30T19:12:35.473791" elapsed="0.137409">Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<msg time="2025-05-30T19:12:35.611281" level="FAIL">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</msg>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Page Should Contain Element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="FAIL" start="2025-05-30T19:12:26.965439" elapsed="8.646092">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<arg>css=h3[data-test="error"]</arg>
+<status status="FAIL" start="2025-05-30T19:12:26.965335" elapsed="8.646312">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>css=h3[data-test="error"]</arg>
+<arg>${expected_text}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-05-30T19:12:35.611744" elapsed="0.000016"/>
+</kw>
+<arg>Error: Last Name is required</arg>
+<status status="FAIL" start="2025-05-30T19:12:26.965178" elapsed="8.646620">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</kw>
+<status status="FAIL" start="2025-05-30T19:12:26.862921" elapsed="8.749020">Keyword 'Page Should Contain Element' failed after retrying 5 times. The last error was: Page should have contained element 'css=h3[data-test="error"]' but did not.</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-30T19:12:35.612342" elapsed="0.084283"/>
+</kw>
+<status status="FAIL" start="2025-05-30T19:12:07.351169" elapsed="28.345516"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="CheckoutInfoTestcases" id="s1" pass="0" fail="3" skip="0">CheckoutInfoTestcases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
